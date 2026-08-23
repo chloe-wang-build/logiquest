@@ -74,6 +74,36 @@ Think about what "greatest common divisor = 10" tells you about every individual
 
 A LogiQuest prompt should preferably help the student generate the next mathematical idea rather than reveal the idea directly.
 
+### Revision — Concrete example moved to optional scaffolding
+
+The original version began by asking the student to suppose that the
+GCD was 10 and then generalized from 10 to d.
+
+This was revised.
+
+The main reasoning path now begins directly with d:
+
+"What does greatest common divisor = d tell you about each integer?"
+
+The concrete case d = 10 is only introduced if the student selects
+"I'm stuck."
+
+Reason:
+
+The original design may over-scaffold students who are already capable
+of reasoning algebraically. Since the intended audience includes high
+school students, and potentially Grade 7–8 students comfortable with
+algebra, the main path should preserve the abstraction of the original
+problem.
+
+A concrete numerical example remains available as scaffolding for
+students who need it.
+
+Design principle:
+
+Start at the level of reasoning we want students to develop.
+Scaffold downward only when needed.
+
 ---
 
 ## Step 2 — Build an example

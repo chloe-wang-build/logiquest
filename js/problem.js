@@ -142,12 +142,36 @@ function setupFirstStepButtons(step) {
 
     stuckButton.addEventListener("click", function () {
         feedbackArea.innerHTML = `
-            <h4>Smaller prompt</h4>
+            <h4>Try a concrete case</h4>
 
             <p>
                 ${step.stuckHint}
             </p>
+
+            <textarea
+                id="stuck-answer"
+                rows="3"
+                placeholder="Write what you notice..."
+            ></textarea>
+
+            <br>
+
+            <button id="return-button">
+                Connect it back to d
+            </button>
         `;
+
+        const returnButton = document.getElementById("return-button");
+
+        returnButton.addEventListener("click", function () {
+            feedbackArea.innerHTML = `
+                <h4>Now generalize</h4>
+
+                <p>
+                    ${step.stuckFollowUp}
+                </p>
+            `;
+        });
     });
 }
 
