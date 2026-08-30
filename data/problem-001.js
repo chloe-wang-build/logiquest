@@ -49,8 +49,26 @@ const problemData = {
         The five integers are also positive and different.
 
         What are the five smallest possible integers they could be?
+
+        Enter them from smallest to largest, separated by commas.
+    `,
+    answerType: "list",
+
+    acceptedAnswers: [
+        "d,2d,3d,4d,5d",
+        "d,2*d,3*d,4*d,5*d"
+    ],
+
+    expectedIdea: "d, 2d, 3d, 4d, 5d",
+
+    stuckHint: `
+        Start listing the positive multiples of d in increasing order:
+
+        d, 2d, 3d, ...
+
+        Remember that all five integers must be different.
     `
-    },
+},
 
 
     {
@@ -116,6 +134,95 @@ const problemData = {
 
             Can you construct five different positive integers
             with sum 264 and greatest common divisor equal to that value?
+        `
+    },
+
+    {
+        type: "solution",
+        title: "Put the reasoning together",
+        text: `
+            The five integers have greatest common divisor d, so each
+            integer must be a multiple of d.
+
+            Since they are positive and different, the smallest five
+            possible multiples are:
+
+            d, 2d, 3d, 4d, 5d
+
+            Their smallest possible sum is 15d.
+
+            Since the actual sum is 264:
+
+            15d ≤ 264
+
+            so d ≤ 17.
+
+            But this only gives an upper bound.
+
+            Because d divides each of the five integers, d must also
+            divide their sum, 264.
+
+            Therefore, d must satisfy both:
+
+            d ≤ 17
+            and
+            d divides 264.
+
+            The largest divisor of 264 that is at most 17 is 12.
+
+            This value is achievable, for example with:
+
+            12, 24, 36, 48, 144
+
+            These are five different positive integers, their sum is 264,
+            and their greatest common divisor is 12.
+
+            Therefore, the largest possible value of d is 12.
+
+            The question asks for the sum of its digits:
+
+            1 + 2 = 3
+        `
+    },
+
+    {
+        type: "reflection",
+        title: "What actually solved the problem?",
+        text: `
+            The important idea was not simply calculating a GCD.
+
+            You translated different pieces of information into constraints:
+
+            • GCD = d → every integer is a multiple of d
+            • positive and different → smallest possibilities are d, 2d, 3d, 4d, 5d
+            • sum = 264 → d has an upper bound
+            • d divides every integer → d must divide 264
+            • combine the constraints → d = 12
+            • construct an example → verify that 12 is actually possible
+
+            A useful question for future problems is:
+
+            "What does each condition force to be true?"
+        `
+    },
+    {
+        type: "generalization",
+        title: "Can you generalize the idea?",
+        text: `
+            Suppose there are k different positive integers instead of five,
+            and their greatest common divisor is d.
+
+            The smallest possible integers would be:
+
+            d, 2d, 3d, ..., kd
+
+            What is their smallest possible sum?
+
+            Think about how the expression
+
+            d + 2d + 3d + ... + kd
+
+            could be written more compactly.
         `
     }
     ]
