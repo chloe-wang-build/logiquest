@@ -154,3 +154,128 @@ concrete example
 → algebraic representation
 
 rather than receiving the general representation immediately.
+
+### Design Iteration — August 29, 2026
+
+#### Start with d, scaffold down only if needed
+The first version began with a concrete example, d = 10. This was changed so the main path starts directly with d, which is more algebraic and better suited to the intended audience.
+
+If a student gets stuck, d = 10 is used as optional scaffolding before returning to the general case.
+
+#### Interaction design
+Avoid unnecessary typing. Use short input when producing the answer is mathematically meaningful, and use choices or fill-in formats when typing would only add friction.
+
+#### Navigation
+Added a Previous button so students can move back through the reasoning without restarting the problem. Answer memory can be added later if needed.
+
+#### Problem ending
+The core problem remains focused on solving through constraints.
+
+The generalization from five integers to k integers will be kept as an optional **Explore Further** section rather than part of the required solution.
+
+#### Math Toolkit idea
+Useful formulas or results that appear naturally in problems can later be collected in a separate **Math Toolkit**.
+
+For this problem, the extension connects to:
+
+1 + 2 + ... + k = k(k + 1) / 2
+
+The toolkit would be a reference for useful mathematical knowledge encountered through solving problems, separate from the main reasoning lessons.
+
+## Problem 002 — Tiny Numbers
+
+### Design Update — September 1, 2026
+
+Problem 2 is the first test of a reusable LogiQuest problem architecture.
+
+### Standardized Checkpoint System
+
+Problems are divided into a flexible number of reasoning checkpoints rather than a fixed number of hints.
+
+Each checkpoint contains:
+
+- a reasoning goal
+- a main prompt
+- an interaction
+- optional scaffolds
+- a key takeaway
+
+Students only see deeper scaffolds if they need them.
+
+Typical progression:
+
+Main prompt → Hint 1 → Hint 2 → stronger guidance
+
+A student who solves the checkpoint independently skips the hints.
+
+### Interaction Types
+
+The engine currently supports:
+
+- `open-response`
+- `short-response`
+- `guided-discovery`
+- `number-input`
+
+Open reasoning uses **Compare my thinking**, while exact answers use **Check my answer**.
+
+### Problem 2 Structure
+
+Tiny Numbers currently has seven checkpoints covering:
+
+1. Understanding what makes a number Tiny
+2. Recognizing the special role of zero
+3. Creating exhaustive cases
+4. Counting the first case
+5. Counting numbers of the form x0z
+6. Counting the no-zero case
+7. Combining the totals
+
+### Source Handling
+
+The original problem wording is preserved.
+
+Multiple-choice answers are omitted.
+
+Full source information is stored in the problem data and displayed through a small `ⓘ Source` control so the contest grade is not shown prominently before solving.
+
+### Technical Architecture
+
+Problem 2 now uses:
+
+```text
+problem-002.html
+        ↓
+data/problem-002.js
+        ↓
+js/checkpoint-engine.js
+
+### Update 9/2/2026
+Problem 3 tester found the number of checkpoints somewhat long, but reported that each checkpoint helped scaffold the reasoning. Decision: retain current structure and gather more testing evidence before modifying checkpoint length or presentation.
+
+## Student Testing — Checkpoint Interface
+
+### Update September 3, 2026
+Problem 4.
+A student tested the guided problem system across the current problems.
+
+### Observation
+
+The tester found that:
+- the reasoning breakdown was useful
+- the hints and guidance were easy to follow
+- each step helped scaffold the solution
+
+However, labels such as **Thinking Process**, **Reasoning Checkpoint**, and **Goal** made the experience feel segmented and game-like. The tester found these labels distracting because knowing the internal step number or purpose did not help them solve the problem.
+
+### Design Decision
+
+Keep the checkpoint architecture internally, but simplify what the student sees.
+
+The engine will continue to use checkpoints, goals, prompts, scaffolds, and takeaways, while the interface will hide unnecessary structural labels.
+
+**Principle:** The reasoning structure should organize the experience without announcing itself to the student.
+
+### Next Test
+
+Remove the visible structural labels, keep the mathematical scaffolding unchanged, and test whether the problem-solving experience feels more continuous.

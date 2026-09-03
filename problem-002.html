@@ -62,31 +62,9 @@
 
     </main>
 
-<script>
-    const params = new URLSearchParams(window.location.search);
-    const problemId = params.get("id") || "002";
+<script src="data/problem-002.js"></script>
+<script src="js/checkpoint-engine.js"></script>
 
-    const dataScript = document.createElement("script");
-    dataScript.src = `data/problem-${problemId}.js`;
-
-    dataScript.onload = function () {
-    
-    const engineScript = document.createElement("script");
-    engineScript.src = "js/checkpoint-engine.js";
-
-    document.body.appendChild(engineScript);
-    };
-
-    dataScript.onerror = function () {
-        document.getElementById("learning-content").innerHTML = `
-            <p>
-                Problem ${problemId} could not be loaded.
-            </p>
-        `;
-    };
-
-    document.body.appendChild(dataScript);
-</script>
 </body>
 
 </html>

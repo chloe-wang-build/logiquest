@@ -13,3 +13,8 @@ h1 {
 h2 {
     margin-top: 40px;
 }
+
+.math-grid {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
