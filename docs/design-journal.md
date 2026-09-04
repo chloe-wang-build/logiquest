@@ -279,3 +279,37 @@ The engine will continue to use checkpoints, goals, prompts, scaffolds, and take
 ### Next Test
 
 Remove the visible structural labels, keep the mathematical scaffolding unchanged, and test whether the problem-solving experience feels more continuous.
+
+### Update September 3, 2026 — Problems 5–7
+
+Problems 5–7 were built using the same reusable structure:
+
+problem.html?id=XXX  
+→ data/problem-XXX.js  
+→ js/checkpoint-engine.js
+
+Each problem now has its own data file, while the execution code stays shared.
+
+The question display was also improved so problems can include:
+- paragraphs
+- bullet points
+- tables
+- source images
+
+This was useful for questions with diagrams or several separate conditions.
+
+Problem 4 is now the main template for new problems. Problems 2–3 will be reviewed later after the full nine-problem test set is finished. Problem 1 will stay as an earlier prototype.
+
+Next: build Problems 8 and 9, then do a consistency review.
+
+### Update September 3, 2026 — Problems 8–9
+
+Problems 8 and 9 were added using the same reusable problem system.
+
+Problem 8 tested geometry and factorization, while Problem 9 tested logic and constraint propagation. Problem 9 also used an original source diagram in the question display.
+
+Both problems worked correctly in local testing.
+
+The current system now supports different problem types without changing the shared checkpoint engine.
+
+Next: send the site to more students for testing, collect feedback, then review the problems together for consistency.

@@ -46,9 +46,7 @@ sourceButton.addEventListener("click", function () {
     sourceDetails.hidden = !sourceDetails.hidden;
 });
 
-problemText.innerHTML = `
-    <p>${problemData.problemText}</p>
-`;
+problemText.innerHTML = problemData.problemText;;
 
 learningContent.innerHTML = "";
 
@@ -76,17 +74,9 @@ function showCheckpoint() {
     learningContent.innerHTML = `
         <div class="learning-step">
 
-            <p class="step-type">
-                Reasoning Checkpoint ${currentCheckpoint + 1}
-            </p>
-
-            <h4>
-                ${checkpoint.goal}
-            </h4>
-
-            <p>
-                ${checkpoint.prompt}
-            </p>
+    <p>
+    ${checkpoint.prompt}
+    </p>
 
             ${interactionHTML}
 
@@ -270,13 +260,13 @@ function setupCheckpointButtons(checkpoint) {
             checkpoint.scaffolds[currentScaffold];
 
         feedbackArea.innerHTML = `
-            <h4>
-                Hint ${currentScaffold + 1}
-            </h4>
+        <p>
+            <strong>Hint</strong>
+        </p>
 
-            <p>
-                ${scaffold.prompt}
-            </p>
+        <p>
+            ${scaffold.prompt}
+        </p>
         `;
 
 
@@ -289,7 +279,7 @@ function setupCheckpointButtons(checkpoint) {
             checkpoint.scaffolds.length
         ) {
             stuckButton.textContent =
-                "I need another hint";
+                "Another hint";
         }
 
         // Student has reached the deepest scaffold
@@ -327,7 +317,7 @@ function showProblemComplete() {
             <h3>Problem Complete</h3>
 
             <p>
-                You have completed the main reasoning path.
+                You've worked through the problem.
             </p>
 
             <button id="previous-button">
