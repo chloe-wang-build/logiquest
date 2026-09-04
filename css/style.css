@@ -34,3 +34,23 @@ h2 {
 .problem-conditions li {
     margin-bottom: 8px;
 }
+
+.problem-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.problem-list a {
+    display: inline-block;
+    padding: 12px 18px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #222;
+}
+
+.problem-list a:hover {
+    background-color: #f2f2f2;
+}

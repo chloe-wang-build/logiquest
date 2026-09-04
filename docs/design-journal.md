@@ -313,3 +313,7 @@ Both problems worked correctly in local testing.
 The current system now supports different problem types without changing the shared checkpoint engine.
 
 Next: send the site to more students for testing, collect feedback, then review the problems together for consistency.
+
+### update 9/3/2026, night
+Added button links in the home page to each questions. 
+I plan to send to logiquest.ca to more student tester tomorrow
