@@ -317,3 +317,11 @@ Next: send the site to more students for testing, collect feedback, then review 
 ### update 9/3/2026, night
 Added button links in the home page to each questions. 
 I plan to send to logiquest.ca to more student tester tomorrow
+
+### Update September 7, 2026 — Interface Facelift
+
+Several testers said the problem-solving process worked well, but the interface felt too plain.
+
+The visual design was updated without changing the reasoning engine. The homepage now uses problem titles, reasoning tags, and small reference codes instead of a numbered sequence. Problem pages were also updated with clearer spacing, cards, buttons, and feedback areas.
+
+Next: test the updated interface with a larger group of students before making further changes.
